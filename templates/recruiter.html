@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<!-- NAV -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<!-- NAV -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='style.css') }}"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<title>Persona</title>
+	</head>
+	<body>
+		<nav class="navbar sticky-top navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand">Persona</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<div
+					class="collapse navbar-collapse"
+					id="navbarSupportedContent"
+				>
+					<ul class="navbar-nav mr-auto w-100 justify-content-end">
+						<li class="nav-item active">
+							<a class="nav-link" href="/"
+								>Home <span class="sr-only">(current)</span></a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/recruiter-login"
+								>Recruiter Login</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="/register">Register</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="register">
+			<div
+				class="register-text"
+				style="padding-right: 20%; padding-left: 5%"
+			>
+				<h2>Enter your credentials</h2>
+				<form role="form" id="signinForm">
+					<input
+						type="email"
+						id="loginID"
+						name="userid"
+						placeholder="E Mail ID"
+						required
+					/><br />
+					<input
+						type="password"
+						id="loginPass"
+						name="password"
+						placeholder="Password"
+						required
+					/>
+					<button
+						class="full-btn"
+						type="submit"
+						id="login-btn"
+						style="height: 42px"
+					>
+						Login
+					</button>
+				</form>
+			</div>
+
+			<img
+				src="../static/register.svg"
+				style="height: 65vh; width: auto"
+			/>
+		</div>
+	</body>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+	<!-- <script src="{{ url_for('static', filename='login.js') }}"></script> -->
+	<script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyBc-AtlK1-YB2kpCEK7umksiZ0lr4lsjhs",
+			authDomain: "personality-prediction-159a1.firebaseapp.com",
+			projectId: "personality-prediction-159a1",
+			storageBucket: "personality-prediction-159a1.appspot.com",
+			messagingSenderId: "11977241851",
+			appId: "1:11977241851:web:9f9552be2fb0309f2eac5e",
+			measurementId: "G-ECR3NC4459",
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		//Recruiter Login
+
+		//Authentication - Firebase - Login
+		const auth = firebase.auth();
+
+		document.getElementById("signinForm").addEventListener("submit", login);
+
+		function login() {
+			console.log("0");
+			var loginID = document.getElementById("loginID").value;
+			var loginPass = document.getElementById("loginPass").value;
+
+			firebase
+				.auth()
+				.signInWithEmailAndPassword(loginID, loginPass)
+				.then((userCredential) => {
+					// Signed in
+					window.location.assign("/data");
+				})
+				.catch((error) => {
+					var errorCode = error.code;
+					var errorMessage = error.message;
+					alert(errorMessage);
+				});
+		}
+
+		$("#signinForm").submit(function (e) {
+			e.preventDefault();
+		});
+	</script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://use.fontawesome.com/3bfa7ea63a.js"></script>
+	<!-- NAV -->
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- NAV -->
+</html>

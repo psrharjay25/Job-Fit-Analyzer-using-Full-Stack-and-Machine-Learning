@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<!-- NAV -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<!-- NAV -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='style.css') }}"
+		/>
+
+		<title>Persona</title>
+	</head>
+	<body>
+		<nav class="navbar sticky-top navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand">Persona</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<div
+					class="collapse navbar-collapse"
+					id="navbarSupportedContent"
+				>
+					<ul class="navbar-nav mr-auto w-100 justify-content-end">
+						<li class="nav-item active">
+							<a class="nav-link" href="/"
+								>Home <span class="sr-only">(current)</span></a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/recruiter-login"
+								>Recruiter Login</a
+							>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="/register">Register</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section id="intro" class="my-5 row">
+			<div style="height: 130px"></div>
+			<div class="col-md-6">
+				<img src="../static/interview.svg" class="col-md-10" alt="" />
+			</div>
+			<div class="col-md-6">
+				<h1 class="text-end mb-5">The Problem</h1>
+				<h4 class="text-end">
+					Time consuming job recruitment process. Manual sorting and
+					filtering of candidates. Lots of resumes and data to
+					analyse.
+				</h4>
+			</div>
+		</section>
+		<section id="intro2" class="my-5 row top-margin">
+			<div style="height: 130px"></div>
+			<div class="col-md-6">
+				<h1 class="text-start mb-5">What is PERSONA?</h1>
+				<h4>
+					Efficient screening system for the companies to recruit
+					manpower resources. It helps the job recruiters to
+					categorise their candidates based on tests, questionnaires
+					and resume.
+				</h4>
+			</div>
+			<div class="col-md-6 text-end">
+				<img src="../static/personality.svg" class="col-md-8" alt="" />
+			</div>
+		</section>
+		<section id="intro3" class="my-5 row top-margin">
+			<div style="height: 130px"></div>
+			<div class="col-md-6">
+				<img src="../static/resume.svg" class="col-md-8" alt="" />
+			</div>
+			<div class="col-md-6">
+				<h1 class="text-end mb-5">Here you go</h1>
+				<h4 class="text-end">
+					A questionnaire that would score candidates' five
+					personality tests based on the Big Five Model - OCEAN. Then
+					based on the score, the model will predict the personality
+					of the person.
+				</h4>
+			</div>
+		</section>
+		<section id="ocean" class="my-5 row top-margin">
+			<div style="height: 130px"></div>
+			<h1 class="text-center mb-5">Scoring Criteria</h1>
+			<div class="row">
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Openness</h5>
+						<p class="card-text">
+							Openness is a characteristic that includes
+							imagination and insight. The world, other people and
+							an eagerness to learn and experience new things is
+							particularly high for this personality trait. It
+							leads to having a broad range of interests and being
+							more adventurous when it comes to decision making.
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Neuroticism</h5>
+						<p class="card-text">
+							Neuroticism is characterised by sadness, moodiness,
+							and emotional instability. Often mistaken for
+							anti-social behaviour, or worse a greater
+							psychological issue, neuroticism is a physical and
+							emotional response to stress and perceived threats
+							in someone’s daily life.
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Conscientiousness</h5>
+						<p class="card-text">
+							Conscientiousness is a trait that includes high
+							levels of thoughtfulness, good impulse control, and
+							goal-directed behaviours. This organised and
+							structured approach is often found within people who
+							work in science and even high-retail finance where
+							detail orientation and organisation are required as
+							a skill set.
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Extraversion</h5>
+						<p class="card-text">
+							Extraversion (sometimes referred to as Extroversion)
+							is a trait that many will have come across in their
+							own lives. It’s easily identifiable and widely
+							recognisable as “someone who gets energised in the
+							company of others.”
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Agreeableness</h5>
+						<p class="card-text">
+							People who exhibit high agreeableness will show
+							signs of trust, altruism, kindness, and affection.
+							Highly agreeable people tend to have high prosocial
+							behaviours which means that they’re more inclined to
+							be helping other people.
+						</p>
+					</div>
+				</div>
+				<label for="disabledRange" class="form-label text-center mt-5"
+					>Scores (min: 0 to max: 10)</label
+				>
+				<input
+					type="range"
+					class="form-range mx-3"
+					id="disabledRange"
+					disabled
+				/>
+			</div>
+		</section>
+		<div class="my-5"></div>
+		<section id="personalities" class="my-5">
+			<h1 class="text-center mb-5">Personalities</h1>
+			<div class="row">
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Serious</h5>
+						<p class="card-text">
+							Individuals with the Serious personality style
+							maintain a sober demeanor. They are solemn and not
+							given to emotional expression. No pretentions. They
+							are realistically aware of their own capabilities,
+							but they are also aware of their own limitations;
+							they are not tempted by vanity or self-importance.
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Extraverted</h5>
+						<p class="card-text">
+							Extraversion is a measure of how energetic, sociable
+							and friendly a person is. Extraverts are commonly
+							understood as being a 'people's person' drawing
+							energy from being around others directing their
+							energies towards people and the outside world.
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Responsible</h5>
+						<p class="card-text">
+							Being responsible means being dependable, keeping
+							promises and honoring our commitments. It is
+							accepting the consequences for what we say and do.
+							It also means developing one's potential. People who
+							are responsible don't make excuses for their actions
+							or blame others when things go wrong
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Dependable</h5>
+						<p class="card-text">
+							A trustworthy person is dependable. They honor their
+							commitments by being reliable. If they say they are
+							going to do something, they do it. A dependable
+							person builds trust by holding him/herself
+							accountable, and if they lead others, holding their
+							team members accountable as well.
+						</p>
+					</div>
+				</div>
+				<div class="card mx-2 col-md-5 my-3 mx-auto">
+					<div class="card-body">
+						<h5 class="card-title">Lively</h5>
+						<p class="card-text">
+							Individuals with full of energy and enthusiasm;
+							interesting and exciting behaviour. Always strive to
+							be positive. Keep calm in stressful situations.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script src="{{ url_for('static', filename='script.js') }}"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://use.fontawesome.com/3bfa7ea63a.js"></script>
+	<!-- NAV -->
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- NAV -->
+</html>

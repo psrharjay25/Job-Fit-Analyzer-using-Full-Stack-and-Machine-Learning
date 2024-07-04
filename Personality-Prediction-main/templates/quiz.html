@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='style.css') }}"
+		/>
+		<!-- NAV -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<!-- NAV -->
+		<!-- <link rel="stylesheet" type="text/css" href="../static/style.css" /> -->
+		<title>Quiz</title>
+	</head>
+	<body>
+		<nav class="navbar sticky-top navbar-expand-lg">
+			<div class="container">
+				<a class="navbar-brand">Persona</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<div
+					class="collapse navbar-collapse"
+					id="navbarSupportedContent"
+				></div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="quiz-main" id="quiz-main">
+				<form method="POST" action="#">
+					<div class="question">
+						<label
+							>Question 1: I see myself as someone who
+							<b>tends to find fault in others.</b></label
+						><br />
+						<!-- Neuroticism-->
+						<input type="radio" value="1" name="mycheckbox" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 2: I see myself as someone who does
+							<b>a thorough job.</b></label
+						><br />
+						<!-- Cons...-->
+						<input type="radio" value="1" name="mycheckbox1" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox1" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox1" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox1" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox1" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 3: I see myself as someone
+							<b>who is reserved.</b> </label
+						><br />
+						<!-- Open-->
+						<input type="radio" value="1" name="mycheckbox2" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox2" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox2" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox2" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox2" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 4: I see myself as someone who is
+							<b
+								>helpful and unselfish when it comes to
+								others.</b
+							></label
+						><br />
+						<!-- Extraverted-->
+						<input type="radio" value="1" name="mycheckbox3" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox3" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox3" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox3" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox3" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 5: I see myself as someone who can be
+							<b>somewhat careless.</b> </label
+						><br />
+						<!-- Cons...-->
+						<input type="radio" value="1" name="mycheckbox4" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox4" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox4" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox4" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox4" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 6: I see myself as someone who
+							<b>starts arguments</b> with others. </label
+						><br />
+						<!-- Agree...-->
+						<input type="radio" value="1" name="mycheckbox5" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox5" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox5" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox5" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox5" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 7: I see myself as someone
+							<b>who can be tense.</b></label
+						><br />
+						<!-- Neuro-->
+						<input type="radio" value="1" name="mycheckbox6" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox6" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox6" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox6" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox6" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 8: I see myself as someone who
+							<b>generates a lot of enthusiasm.</b> </label
+						><br />
+						<!-- Extraversion-->
+						<input type="radio" value="1" name="mycheckbox7" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox7" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox7" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox7" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox7" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 9: I see myself as someone who has
+							<b>an active imagination.</b></label
+						><br />
+						<!-- Openness-->
+						<input type="radio" value="1" name="mycheckbox8" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox8" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox8" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox8" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox8" /> 5 -
+						Strongly Agree<br />
+						<br /><br />
+						<label
+							>Question 10: I see myself as someone who is
+							<b>generally trusting.</b></label
+						><br />
+						<!-- Agree-->
+						<input type="radio" value="1" name="mycheckbox9" /> 1 -
+						Strongly Disagree<br />
+						<input type="radio" value="2" name="mycheckbox9" /> 2 -
+						Partially Disagree<br />
+						<input type="radio" value="3" name="mycheckbox9" /> 3 -
+						Neutral<br />
+						<input type="radio" value="4" name="mycheckbox9" /> 4 -
+						Partially Agree<br />
+						<input type="radio" value="5" name="mycheckbox9" /> 5 -
+						Strongly Agree<br />
+					</div>
+					<br /><br /><br />
+					<input type="submit" class="sub-btn" />
+				</form>
+			</div>
+			<div class="quiz-pic">
+				<img src="../static/quiz.png" />
+			</div>
+		</div>
+	</body>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://use.fontawesome.com/3bfa7ea63a.js"></script>
+	<!-- NAV -->
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"
+	></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- NAV -->
+</html>
